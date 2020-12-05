@@ -65,19 +65,19 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
             <div class="px-2 py-2 border-bottom">
                 <h3 class="h5">Typy odpadu</h3>
                 <div class="list-group filters">
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-fire"></i>Nebezpečný odpad<i class="fa fa-filter"></i>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-battery-full"></i>Elektro<i class="fa fa-filter"></i>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-car"></i>Tuk Tuk<i class="fa fa-filter"></i>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-trash"></i>Komunální odpad<i class="fa fa-filter"></i>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-recycle"></i>Plast<i class="fa fa-filter"></i>
                     </a>
                 </div>
@@ -85,21 +85,21 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
             <div class="px-2 py-2 border-bottom">
                 <h3 class="h5">Typy sběrných míst</h3>
                 <div class="list-group filters">
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-trash"></i>Sběrný dvůr<i class="fa fa-filter"></i>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-trash"></i>Kontejner<i class="fa fa-filter"></i>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action" onclick="filter(this)">
                         <i class="fa fa-fw fa-trash"></i>Popelnice<i class="fa fa-filter"></i>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="sidebar sidebar-right sidebar-closable" id="sidebarRight">
-        <div class="sidebar-handle" onclick="showSidebar('sidebarRight')">
+    <div class="sidebar sidebar-right sidebar-closable" id="sidebar">
+        <div class="sidebar-handle" onclick="toggleSidebar()">
             <i class="fas fa-angle-left"></i>
         </div>
         <div class="sidebar-container">
@@ -233,21 +233,23 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
 
 <script type="text/javascript">
     var poiList = @Html.Raw(Json.Serialize(locations));
-    function showSidebar(id) {
-        var isShown = document.getElementById(id).classList.contains('show');
-        $('.sidebar').removeClass('show');
-        if (!isShown)
-            $('#' + id).toggleClass('show');
+    function toggleSidebar(id) {
+        document.getElementById('sidebar').classList.toggle('show');
     }
 </script>
 
 <script type="text/javascript">
-$.typeahead({
-    input: ".js-typeahead",
-    order: "asc",
-    source: ["sklo", "plast", "výbušniny", "pneumatiky", "žárovky", "zářivky", "baterie", "autobaterie", "olej", "karton", "plechovka", "kov"],
-    callback: {
-        onClickBefore: function () { }
+    $.typeahead({
+        input: ".js-typeahead",
+        order: "asc",
+        source: ["sklo", "plast", "výbušniny", "pneumatiky", "žárovky", "zářivky", "baterie", "autobaterie", "olej", "karton", "plechovka", "kov"],
+        callback: {
+            onClickBefore: function () { }
+        }
+    });
+    
+    function filter(element){
+        element.classList.toggle('active');
+        document.getElementById('sidebar').classList.add('show');
     }
-});
 </script>
