@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    String pageRoute = ViewContext.RouteData.Values["page"].ToString();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,17 +12,48 @@
     <link rel="stylesheet" href="~/css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/fontawesome/css/all.min.css" asp-append-version="true">
-</head>
+    <link rel="stylesheet" href="~/lib/jquery-typeahead/jquery.typeahead.min.css">
 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-typeahead/jquery.typeahead.min.js"></script>
+</head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary shadow-sm">
         <div class="container-fluid">
             <div class="col-4 pl-lg-0">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="/">Domů<span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Categories">Druhy odpadu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/FAQ">Často kladené otázky</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Kontakt">Kontakt</a></li>
+                     <li class="nav-item"><a class="nav-link  @(pageRoute.StartsWith("/Index") ? "active" : "")"
+                            href="/">Domů
+                            @if (pageRoute.StartsWith("/Index"))
+                            {
+                                <span class="sr-only">(current)</span>
+                            }
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link @(pageRoute.Contains("/Categories") ? "active" : "")"
+                            href="/Categories">Druhy odpadu
+                            @if (pageRoute.StartsWith("/Categories"))
+                            {
+                                <span class="sr-only">(current)</span>
+                            }
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link
+                            @(pageRoute.Contains("/FAQ") ? "active" : "")" href="/FAQ">Často kladené otázky
+                            @if (pageRoute.StartsWith("/FAQ"))
+                            {
+                                <span class="sr-only">(current)</span>
+                            }
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link @(pageRoute.Contains("/Contact") ? "active" : "")"" href="
+                            /Contact">Kontakt
+                            @if (pageRoute.StartsWith("/Contact"))
+                            {
+                                <span class="sr-only">(current)</span>
+                            }
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-4 navbar-nav text-center pr-0 d-none d-lg-block">
@@ -38,13 +73,13 @@
     <main class="main">
         @RenderBody()
     </main>
-    
+
     @RenderSection("footer", false)
 
-<script src="https://api.mapy.cz/loader.js"></script>
+    <script src="https://api.mapy.cz/loader.js"></script>
     <script>Loader.load()</script>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/map-configuration.js"></script>
