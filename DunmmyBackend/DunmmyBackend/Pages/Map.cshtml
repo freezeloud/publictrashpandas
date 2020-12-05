@@ -14,18 +14,40 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
             <div class="px-2 py-2 border-bottom">
                 <h2>Hledat</h2>
                 <form>
-                    <div class="form-group mb-0">
-                        <input class="form-control filter-input" id="what" aria-describedby="whatHelp"
-                            placeholder="Co chci třídit?">
-                        <input class="form-control filter-input" id="where" aria-describedby="whereHelp"
-                            placeholder="Kde chci třídit?">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="fas fa-recycle"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Co chceš recyklovat">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <div class="input-group flex-fill">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control " placeholder="Kde chceš recyklovat">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                              </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="formControlRange">V maximální vzdálenosti (km)</label>
                         <input type="range" class="form-control-range" id="formControlRange">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block">Hledat <i class="fas fa-search ml-2"></i></button>
                     </div>
                 </form>
                 <div class="badge badge-secondary badge-pill">
@@ -114,7 +136,7 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
             </div>
         </div>
     </div>
-    <div class="sidebar sidebar-right sidebar-closable" id="sidebarRight-2">
+    <!-- <div class="sidebar sidebar-right sidebar-closable" id="sidebarRight-2">
         <div class="sidebar-handle" onclick="showSidebar('sidebarRight-2')">
             <i class="fas fa-angle-left"></i>
         </div>
@@ -185,7 +207,7 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div id="map"></div>
 
 </div>
@@ -195,7 +217,7 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
     function showSidebar(id) {
         var isShown = document.getElementById(id).classList.contains('show');
         $('.sidebar').removeClass('show');
-        if(!isShown)
+        if (!isShown)
             $('#' + id).toggleClass('show');
     }
 </script>
