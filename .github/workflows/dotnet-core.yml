@@ -24,8 +24,8 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal DunmmyBackend/DunmmyBackend.sln
     - name: Publish
-      run: dotnet publish -c Release --no-restore -o /app DunmmyBackend/DunmmyBackend.sln
+      run: dotnet publish -c Release --no-restore -o app DunmmyBackend/DunmmyBackend.sln
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.1
       with:
-        path: /app
+        path: app
