@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DunmmyBackend.Api
 {
@@ -14,7 +11,9 @@ namespace DunmmyBackend.Api
         [HttpGet("types")]
         public IActionResult GetLocationTypes()
         {
-            return Ok(Enum.GetValues<DisposalLocationType>());
+            var disposalLocationTypes = Enum.GetValues<DisposalLocationType>();
+            var disposalTypesMap = disposalLocationTypes.Select(t => new { id = (int)t, name = t });
+            return Ok(disposalTypesMap);
         }
     }
 }
