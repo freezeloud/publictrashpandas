@@ -51,6 +51,43 @@ button.accept-policy {
   line-height: inherit;
 }
 
+/* Map filter
+-------------------------------------------------- */
+.filter-input {
+  margin: 8px 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  height: 25px;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 25px;
+  background-color: #eaeaea;
+  color: #585858;
+}
+
+.filter-label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.list-unstyled .fa::before {
+  padding: 8px;
+}
+
+.list-unstyled .fa-fw {
+  width: 35px;
+  margin: 8px;
+  color: ;
+}
+
+.list-unstyled {
+  color: #414141;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
