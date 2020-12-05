@@ -8,40 +8,27 @@ namespace DunmmyBackend
     public class DummyDataProvider : IDataProvider
     {
         private readonly IStreetNamesProvider _streets;
+        private readonly IStorage _storage;
 
-        public DummyDataProvider(IStreetNamesProvider streets)
+        public DummyDataProvider(IStreetNamesProvider streets, IStorage storage)
         {
             _streets = streets;
+            _storage = storage;
+            var locations = GenerateDisposalLocationDetails(10);
+            _storage.Store(locations);
         }
 
         public Task<List<DisposalLocation>> GetDisposalLocationsAsync(int amount = 10)
         {
-            var disposalLocations = new List<DisposalLocation>
-            {
-                new DisposalLocation
-                {
-                    Id = 1,
-                    Name = "Mostní 958",
-                    AcceptingTypeOfWaste = new List<WasteType>
-                    {
-                        WasteType.Paper,
-                        WasteType.Plastic
-                    },
-                    LatLng = new LatitudeLongitude(49.2190744, 17.6554547),
-                    TypeOfDisposalLocation = DisposalLocationType.SortedWasteContainers,
-                }
-            };
-
-            disposalLocations.AddRange(GenerateDisposalLocations(amount - 1));
-            return Task.FromResult(disposalLocations);
+            return Task.FromResult(_storage.GetAllLocations().Cast<DisposalLocation>().ToList());
         }
 
-        private IEnumerable<DisposalLocation> GenerateDisposalLocations(int amount)
+        private IEnumerable<DisposalLocationDetails> GenerateDisposalLocationDetails(int amount)
         {
             var rand = new Random(DateTime.Now.Millisecond);
             for (var i = 0; i < amount; i++)
             {
-                yield return new DisposalLocation
+                yield return new DisposalLocationDetails
                 {
                     Id = 100 + i,
                     Name = $"{_streets.GetRandomStreetNames(rand)} {rand.Next(1, 1200)}",
@@ -55,6 +42,11 @@ namespace DunmmyBackend
         public Task<List<DisposalLocation>> GetDisposalLocationsForAreaAsync((double latitude, double longitude) latLong, double diameterKm)
         {
             throw new NotImplementedException();
+        }
+
+        public Task<DisposalLocationDetails> GetDisposalLocationDetailsAsync(long id)
+        {
+            return Task.FromResult(_storage.GetLocationById(id));
         }
 
         private static double RandomLong(Random rand)

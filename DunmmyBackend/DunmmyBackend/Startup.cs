@@ -20,6 +20,7 @@ namespace DunmmyBackend
         {
             services.AddRazorPages();
             services.AddScoped<IDataProvider, DummyDataProvider>();
+            services.AddSingleton<IStorage, MemoryStorage>();
             services.AddScoped<IStreetNamesProvider, StreetNamesProvider>();
         }
 
