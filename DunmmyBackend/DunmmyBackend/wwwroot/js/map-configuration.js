@@ -23,7 +23,6 @@ function getMarker(poi) {
     var types = poi.acceptingTypeOfWaste;
     var type = types.length == 1 ? types[0] : 'group';
     var marker = JAK.mel("div");
-    console.log("/img/marker-" + type + ".svg");
     var pinImage = JAK.mel("img", {src: "/img/marker-" + type + ".svg"});
     marker.appendChild(pinImage);
     return marker;

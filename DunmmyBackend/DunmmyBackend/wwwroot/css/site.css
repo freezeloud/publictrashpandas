@@ -75,17 +75,44 @@
   cursor: pointer;
 }
 
-.list-unstyled .fa::before {
+
+
+
+/**************************************/
+.filters .fa::before {
   padding: 8px;
 }
 
-.list-unstyled .fa-fw {
+.filters .fa-fw {
   width: 35px;
   margin: 8px;
 }
 
-.list-unstyled {
+.filters {
   color: #414141;
+}
+
+.filters a:hover {
+  background-color: rgba(0, 0, 0, .05);
+  color: #019240;
+}
+
+.filters .fa-filter {
+  visibility: collapse;
+  float: right;
+  margin: 8px;
+}
+
+.filters a:hover .fa-filter {
+  visibility: visible;
+}
+
+.filters {
+  border-radius: 0;
+}
+.filters a {
+  padding: 4px 0;
+  border: none;
 }
 
 .section-hero {
