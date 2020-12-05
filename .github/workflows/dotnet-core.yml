@@ -18,13 +18,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Install dependencies
-      run: dotnet restore "../../DummyBackend/DummyBackend.sln"
+      run: dotnet restore DunmmyBackend\DunmmyBackend.sln
     - name: Build
-      run: dotnet build --configuration Release --no-restore DummyBackend/DummyBackend.sln
+      run: dotnet build --configuration Release --no-restore DunmmyBackend\DunmmyBackend.sln
     - name: Test
-      run: dotnet test --no-restore --verbosity normal DummyBackend/DummyBackend.sln
+      run: dotnet test --no-restore --verbosity normal DunmmyBackend\DunmmyBackend.sln
     - name: Publish
-      run: dotnet publish -c Release --no-restore -o /app DummyBackend/DummyBackend.sln
+      run: dotnet publish -c Release --no-restore -o /app DunmmyBackend\DunmmyBackend.sln
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.1
       with:
