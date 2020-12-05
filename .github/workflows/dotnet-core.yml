@@ -23,12 +23,24 @@ jobs:
       run: dotnet build --configuration Release --no-restore DunmmyBackend/DunmmyBackend.sln
     - name: Test
       run: dotnet test --no-restore --verbosity normal DunmmyBackend/DunmmyBackend.sln
+  
+  publish:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
     - name: Publish
       run: dotnet publish -c Release --no-restore -o app DunmmyBackend/DunmmyBackend.sln
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.1
       with:
         path: app
+  
+  deploy:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v1
       with:
