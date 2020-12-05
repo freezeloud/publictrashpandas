@@ -16,6 +16,11 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                     <div class="form-group">
                         <div class="typeahead__container">
                             <div class="typeahead__field">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <i class="fas fa-recycle"></i>
+                                    </span>
+                                </div>
                                 <div class="typeahead__query">
                                     <input class="js-typeahead"
                                         placeholder="Co chceš recyklovat"
@@ -23,9 +28,9 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                                         autocomplete="off"
                                         type="text">
                                 </div>
-                                <div class="typeahead__button">
-                                    <button type="submit">
-                                       <i class="fas fa-search"></i>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-primary" style="color: #019240; border-color: #019240" type="button">
+                                        <i class="fas fa-search"></i>
                                     </button>
                                 </div>
                             </div>
@@ -43,7 +48,7 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                                 <button class="btn btn-outline-primary" type="button">
                                     <i class="fas fa-search"></i>
                                 </button>
-                              </div>
+                            </div>
                         </div>
                     </div>
 
