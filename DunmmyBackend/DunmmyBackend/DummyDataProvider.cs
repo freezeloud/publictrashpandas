@@ -43,15 +43,12 @@ namespace DunmmyBackend
             {
                 streetsEnumerator.MoveNext();
                 var randomLat = RandomLat(rand);
+
                 yield return new DisposalLocation
                 {
                     Id = 100 + i,
                     Name = $"{streetsEnumerator.Current} {rand.Next(1, 1200)}",
-                    AcceptingTypeOfWaste = new List<WasteType>
-                    {
-                        WasteType.Paper,
-                        WasteType.Plastic,
-                    },
+                    AcceptingTypeOfWaste = RandomAcceptingTypesOfWaste(rand),
                     LatLng = new LatitudeLongitude(49.0 + RandomLat(rand), 17.0 + RandomLong(rand)),
                     TypeOfDisposalLocation = DisposalLocationType.SortedWasteContainers,
                 };
@@ -66,6 +63,17 @@ namespace DunmmyBackend
         private static double RandomLat(Random rand)
         {
             return rand.Next(2184089, 2430142) / (float)10000000;
+        }
+
+        private static List<WasteType> RandomAcceptingTypesOfWaste(Random rand) {
+            var numberOfTypes = rand.Next(1, 3);
+            var acceptingTypeOfWaste = new List<WasteType>();
+            for (var i = 0; i < numberOfTypes; ++i) {
+                var wasteTypeValues = Enum.GetValues<WasteType>();
+                WasteType wasteType = (WasteType) wasteTypeValues[rand.Next(0, wasteTypeValues.Length - 1)];
+                acceptingTypeOfWaste.Add(wasteType);
+            }
+            return acceptingTypeOfWaste;
         }
 
         public Task<List<DisposalLocation>> GetDisposalLocationsForAreaAsync((double latitude, double longitude) latLong, double diameterKm)
@@ -116,5 +124,8 @@ namespace DunmmyBackend
         Dangerous,
         Oil,
         Municipal,
+        Tyres,
+        Glass,
+        Textile
     }
 }
