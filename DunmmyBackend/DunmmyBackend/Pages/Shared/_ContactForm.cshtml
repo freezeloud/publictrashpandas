@@ -1,11 +1,14 @@
+@{
+    String pageRoute = ViewContext.RouteData.Values["page"].ToString();
+}
+
+
 <section class="py-5 bg-light">
     <div class="container">
-        <header class=" text-center mb-4">
-            <h2>Kontaktujte nas</h2>
-        </header>
-
         <div class="mt-4 py-4 px-5 bg-white shadow-sm rounded border">
-            <h2 class="mb-5 text-center">Nenašli jste odpověd na vaši otázku?</h2>
+            <h2 class="mb-5 text-center">
+                @(pageRoute.Contains("/FAQ") ? "Nenašli jste odpověd na vaši otázku?" : "Kontaktujte nás")
+            </h2>
             <div class="row">
                 <div class="col-md-6 mb-3 mb-md-0">
                     <h3 class="mb-4">Kontakujte nás a rádi vaši otázku zodpovíme</h3>
