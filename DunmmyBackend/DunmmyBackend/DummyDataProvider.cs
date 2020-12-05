@@ -26,7 +26,7 @@ namespace DunmmyBackend
                         WasteType.Paper,
                         WasteType.Plastic
                     },
-                    LatLong = (49.2190744, 17.6554547),
+                    LatLng = new LatitudeLongitude(49.2190744, 17.6554547),
                     TypeOfDisposalLocation = DisposalLocationType.SortedWasteContainers,
                 }
             };
@@ -52,18 +52,18 @@ namespace DunmmyBackend
                         WasteType.Paper,
                         WasteType.Plastic,
                     },
-                    LatLong = (49.0 + RandomLat(rand), 17.0 + RandomLong(rand)),
+                    LatLng = new LatitudeLongitude(49.0 + RandomLat(rand), 17.0 + RandomLong(rand)),
                     TypeOfDisposalLocation = DisposalLocationType.SortedWasteContainers,
                 };
             }
         }
 
-        private static float RandomLong(Random rand)
+        private static double RandomLong(Random rand)
         {
             return (rand.Next(6351772, 7166306) / (float) 10000000);
         }
 
-        private static float RandomLat(Random rand)
+        private static double RandomLat(Random rand)
         {
             return rand.Next(2184089, 2430142) / (float)10000000;
         }
@@ -86,7 +86,19 @@ namespace DunmmyBackend
         public string Name { get; set; }
         public IEnumerable<WasteType> AcceptingTypeOfWaste { get; set; }
         public DisposalLocationType TypeOfDisposalLocation { get; set; }
-        public (double latitude, double longitude) LatLong { get; set; }
+        public LatitudeLongitude LatLng { get; set; }
+    }
+
+    public class LatitudeLongitude
+    {
+        public LatitudeLongitude(double lat, double lng)
+        {
+            Lat = lat;
+            Lng = lng;
+        }
+
+        public double Lat { get; set; }
+        public double Lng { get; set; }
     }
 
     public enum DisposalLocationType
