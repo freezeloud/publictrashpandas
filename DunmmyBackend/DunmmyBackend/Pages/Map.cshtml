@@ -14,17 +14,20 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                 <h2>Hledat</h2>
                 <form>
                     <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="fas fa-recycle"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Co chceš recyklovat">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-primary" type="button">
-                                    <i class="fas fa-search"></i>
-                                </button>
+                        <div class="typeahead__container">
+                            <div class="typeahead__field">
+                                <div class="typeahead__query">
+                                    <input class="js-typeahead"
+                                        placeholder="Co chceš recyklovat"
+                                        name="what"
+                                        autocomplete="off"
+                                        type="text">
+                                </div>
+                                <div class="typeahead__button">
+                                    <button type="submit">
+                                       <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -236,4 +239,15 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
         if (!isShown)
             $('#' + id).toggleClass('show');
     }
+</script>
+
+<script type="text/javascript">
+$.typeahead({
+    input: ".js-typeahead",
+    order: "asc",
+    source: ["sklo", "plast", "výbušniny", "pneumatiky", "žárovky", "zářivky", "baterie", "autobaterie", "olej", "karton", "plechovka", "kov"],
+    callback: {
+        onClickBefore: function () { }
+    }
+});
 </script>
