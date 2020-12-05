@@ -250,7 +250,27 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
 $.typeahead({
     input: ".js-typeahead",
     order: "asc",
-    source: ["sklo", "plast", "výbušniny", "pneumatiky", "žárovky", "zářivky", "baterie", "autobaterie", "olej", "karton", "plechovka", "kov"],
+    source: [
+        "sklo",
+        "plast",
+        "výbušniny",
+        "pneumatiky",
+        "žárovky",
+        "zářivky",
+        "baterie",
+        "autobaterie",
+        "olej",
+        "karton",
+        "plechovka",
+        "kov",
+        "papír",
+        "azbest",
+        "láhev",
+        "nádobí",
+        "elektronika",
+        "auto",
+        "vozidlo"
+    ],
     callback: {
         onClickBefore: function () { }
     }
