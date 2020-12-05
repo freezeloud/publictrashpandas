@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,33 +9,26 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/fontawesome/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">DunmmyBackend</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Map">Map</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-4 navbar-nav text-center pr-0 d-none d-lg-block"><a class="navbar-brand mr-0" href="#">Chci recyklovat</a></div>
-                <div class="col-4 pr-lg-0">
-                    <ul class="navbar-nav justify-content-end">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+        <div class="container-fluid">
+            <div class="col-4 pl-lg-0">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="/">Domů<span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Druhy odpadu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Mapa</a></li>
+              </ul>
+            </div>
+            <div class="col-4 navbar-nav text-center pr-0 d-none d-lg-block"><a class="navbar-brand mr-0" href="#">Chci
+                    recyklovat</a></div>
+            <div class="col-4 pr-lg-0">
+                <ul class="navbar-nav justify-content-end">
                     <li class="nav-item"><a class="nav-link" href="/">Často kladené otázky</a></li>
                     <li class="nav-item"><a class="nav-link" href="/">Jak to funguje</a></li>
-                    </ul>
-                </div>
-            </div>  
+                </ul>
+            </div>
+        </div>
         </div>
     </nav>
     <main class="main">
@@ -44,25 +38,25 @@
     <footer class="py-5">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center flex-column flex-md-row border-bottom pb-2">
-            <ul class="nav order-2 order-md-1">
-                <li class="nav-item"><a class="nav-link" href="/">Domů</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Categories">Druhy odpadu</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Map">Mapa</a></li>
-            </ul>
-            <h5 class="mr-0 mr-md-5 mb-0 order-1 order-md-2"><a href="/">Chci recyklovat</a></h5>
-            <ul class="nav order-3 order-md-3">
-                <li class="nav-item"><a class="nav-link" href="/">Často kladené otázky</a></li>
-                <li class="nav-item"><a class="nav-link" href="/">Jak to funguje</a></li>
-            </ul>
+                <ul class="nav order-2 order-md-1">
+                    <li class="nav-item"><a class="nav-link" href="/">Domů</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Categories">Druhy odpadu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Map">Mapa</a></li>
+                </ul>
+                <h5 class="mr-0 mr-md-5 mb-0 order-1 order-md-2"><a href="/">Chci recyklovat</a></h5>
+                <ul class="nav order-3 order-md-3">
+                    <li class="nav-item"><a class="nav-link" href="/">Často kladené otázky</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Jak to funguje</a></li>
+                </ul>
             </div>
             <div class="d-flex justify-content-center mt-2">
-            <p class="mb-0 mt-2 small text-muted">© 2020 Chci recyklovat. All right reserved.</p>
+                <p class="mb-0 mt-2 small text-muted">© 2020 Chci recyklovat. All right reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://api.mapy.cz/loader.js"></script>
-	<script>Loader.load()</script>
+    <script>Loader.load()</script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -71,4 +65,5 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
