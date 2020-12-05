@@ -51,6 +51,13 @@ button.accept-policy {
   line-height: inherit;
 }
 
+/* Main map layout
+-------------------------------------------------- */
+
+.main-screen-container {
+  height: calc(100vh - 57px);
+}
+
 /* Map filter
 -------------------------------------------------- */
 .filter-input {
@@ -81,7 +88,6 @@ button.accept-policy {
 .list-unstyled .fa-fw {
   width: 35px;
   margin: 8px;
-  color: ;
 }
 
 .list-unstyled {
