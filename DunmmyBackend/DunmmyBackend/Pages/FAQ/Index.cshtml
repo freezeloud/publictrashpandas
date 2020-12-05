@@ -15,165 +15,23 @@
         </header>
 
         <div class="text-left">
+            @for(var i = 0; i < IndexModel.GetQuestions().Count; ++i)
+            {
             <div class="card mb-2 shadow-sm">
                 <div class="card-header bg-white" id="faq-heading1-02">
                     <h5 class="mb-0">
                         <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Co je upcyklace?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
+                            data-target="#faq-collapse1-@i" aria-expanded="false" aria-controls="faq-collapse1-@i"
+                            style="white-space:normal !important; word-wrap: break-word">
+                            @IndexModel.GetQuestion(i).question<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
                                 alt=""></button>
                     </h5>
                 </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
+                <div class="collapse" id="faq-collapse1-@i" aria-labelledby="faq-heading1-@i">
+                    <div class="card-body border-bottom">@IndexModel.GetQuestion(i).answer</div>
                 </div>
             </div>
-            <div class="card mb-2 shadow-sm">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak se recyklují tonery?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card mb-2 shadow-sm">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Kam patří mobilní telefon?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card mb-2 shadow-sm">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak funguje Remanufacturing?
-                            <img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card shadow-sm mb-2 ">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši
-                            aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card shadow-sm mb-2 ">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši
-                            aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card shadow-sm mb-2 ">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši
-                            aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card shadow-sm mb-2 ">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši
-                            aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
-            <div class="card shadow-sm">
-                <div class="card-header bg-white" id="faq-heading1-02">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse"
-                            data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02"
-                            style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši
-                            aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg"
-                                alt=""></button>
-                    </h5>
-                </div>
-                <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
-                    <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.
-                        Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa
-                        quis mauris vehicula lacinia.</div>
-                </div>
-            </div>
+            }
         </div>
 
         <div class="mt-4 py-4 px-5 bg-white shadow-sm rounded border">
