@@ -2,6 +2,7 @@
 @model MapModel
 @using System.Text.Json
 @{
+    Layout = "_LayoutWithoutFooter";
     ViewData["Title"] = "Privacy Policy";
     var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
 
