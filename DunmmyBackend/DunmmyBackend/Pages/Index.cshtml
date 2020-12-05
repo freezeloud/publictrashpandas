@@ -4,7 +4,266 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="section-hero">
+    <img src="img/HeroImage.png" alt="" class="section-hero-image">
+    <div class="section-hero-image-overlay"></div>
+    <div class="section-hero-content container d-flex justify-content-around align-items-center h-100 text-light flex-column">
+        <header class="w-100">
+            <h1 class="display-1 font-weight-bold mb-0">Chci recyklovat</h1>
+            <p class="h1">
+                Chceš recyklovat? Jsme tu pro tebe!
+            </p>
+            <div class="mt-4">
+                <button class="btn btn-primary btn-lg mr-2">
+                    Více informací
+                </button>
+                <button class="btn btn-primary btn-lg">
+                    Stáhnout aplikaci
+                </button>
+            </div>
+        </header>
+        <form class="form-inline mt-4 justify-content-between w-100 bg-white shadow-lg rounded p-4">
+            <div class="input-group  flex-fill">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-recycle"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control form-control-lg mr-2" placeholder="Co chceš recyklovat">
+            </div>
+            <div class="input-group flex-fill">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control form-control-lg mr-2" placeholder="Kde chceš recyklovat">
+            </div>
+            
+            <button class="btn btn-primary btn-lg flex-fill">Hledat
+                <i class="fas fa-search ml-2"></i>
+            </button>
+        </form>
+    </div>
+    
+    
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="mb-3">Jak to funguje</h2>
+    <hr class="custom">
+    <div class="row mb-3">
+      <div class="col-md-4 p-2 py-3">
+        <img class="img-fluid mx-auto my-4" src="https://via.placeholder.com/350" alt="">
+        <h4 class="my-4"><small class="rounded-circle px-3 py-2 mr-2 bg-primary">1</small> Naistaluj</h4>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</p>
+      </div>
+      <div class="col-md-4 p-2 py-3">
+        <img class="img-fluid mx-auto my-4" src="https://via.placeholder.com/350" alt="">
+        <h4 class="my-4"><small class="rounded-circle px-3 py-2 mr-2 bg-primary">2</small> Recykluj</h4>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</p>
+      </div>
+      <div class="col-md-4 p-2 py-3">
+        <img class="img-fluid mx-auto my-4" src="https://via.placeholder.com/350" alt="">
+        <h4 class="my-4"><small class="rounded-circle px-3 py-2 mr-2 bg-primary">3</small> Doporuč přátelům</h4>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</p>
+      </div>
+    </div>
+    <a class="btn btn-primary btn-lg" href="#">Zjisti více
+        <i class="fas fa-angle-double-right ml-2"></i>
+    </a>
+  </div>
+</section>
+
+<section class="section-categories py-4 bg-light">
+    <div class="container">
+        <header class="mb-4">
+            <h2>
+                Informace o jednotlivých druzích odpadu
+            </h2>
+            <hr class="custom ml-0 b-dark">
+            <p></p>
+        </header>
+        <div class="row mb-3">
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm" >
+                    <img class="card-img-top" src="https://via.placeholder.com/375x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Card title</h5>
+                        <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link btn btn-primary">
+                            Více informací
+                            <i class="fas fa-angle-double-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm" >
+                    <img class="card-img-top" src="https://via.placeholder.com/375x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Card title</h5>
+                        <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link btn btn-primary">
+                            Více informací
+                            <i class="fas fa-angle-double-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm" >
+                    <img class="card-img-top" src="https://via.placeholder.com/375x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Card title</h5>
+                        <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link btn btn-primary">
+                            Více informací
+                            <i class="fas fa-angle-double-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm" >
+                    <img class="card-img-top" src="https://via.placeholder.com/375x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Card title</h5>
+                        <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link btn btn-primary">
+                            Více informací
+                            <i class="fas fa-angle-double-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm" >
+                    <img class="card-img-top" src="https://via.placeholder.com/375x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Card title</h5>
+                        <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link btn btn-primary">
+                            Více informací
+                            <i class="fas fa-angle-double-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="card shadow-sm" >
+                    <img class="card-img-top" src="https://via.placeholder.com/375x250" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">Card title</h5>
+                        <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link btn btn-primary">
+                            Více informací
+                            <i class="fas fa-angle-double-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="text-center">
+            <button class="btn btn-primary btn-lg shadow-sm">
+                Informace o všech druzích
+            </button>
+        </footer>
+    </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h2>Proč recyklovat</h2>
+    <div class="row">
+      <div class="col-md-4 mt-5">
+        <img class="rounded-circle mb-4" src="https://via.placeholder.com/50" alt="" width="100" height="100">
+        <p class="mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</p>
+        <p class="mb-0">5000</p>
+        <p class="text-muted">Láhví PET</p>
+      </div>
+      <div class="col-md-4 mt-5">
+        <img class="rounded-circle mb-4" src="https://via.placeholder.com/50" alt="" width="100" height="100">
+        <p class="mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</p>
+        <p class="mb-0">150</p>
+        <p class="text-muted">Tun odpadu</p>
+      </div>
+      <div class="col-md-4 mt-5">
+        <img class="rounded-circle mb-4" src="https://via.placeholder.com/50" alt="" width="100" height="100">
+        <p class="mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</p>
+        <p class="mb-0">5 mil</p>
+        <p class="text-muted">Korun ušetřeno</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5">Často kladené otázky</h2>
+    <div class="text-left">
+      <div class="card mb-2 shadow-sm">
+        <div class="card-header bg-white" id="faq-heading1-02">
+          <h5 class="mb-0">
+            <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse" data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02" style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg" alt=""></button>
+          </h5>
+        </div>
+        <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
+          <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</div>
+        </div>
+      </div>
+      <div class="card mb-2 shadow-sm">
+        <div class="card-header bg-white" id="faq-heading1-02">
+          <h5 class="mb-0">
+            <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse" data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02" style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg" alt=""></button>
+          </h5>
+        </div>
+        <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
+          <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</div>
+        </div>
+      </div>
+      <div class="card mb-2 shadow-sm">
+        <div class="card-header bg-white" id="faq-heading1-02">
+          <h5 class="mb-0">
+            <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse" data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02" style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg" alt=""></button>
+          </h5>
+        </div>
+        <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
+          <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</div>
+        </div>
+      </div>
+      <div class="card mb-2 shadow-sm">
+        <div class="card-header bg-white" id="faq-heading1-02">
+          <h5 class="mb-0">
+            <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse" data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02" style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg" alt=""></button>
+          </h5>
+        </div>
+        <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
+          <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</div>
+        </div>
+      </div>
+      <div class="card shadow-sm">
+        <div class="card-header bg-white" id="faq-heading1-02">
+          <h5 class="mb-0">
+            <button class="btn btn-link btn-block text-left d-flex" type="button" data-toggle="collapse" data-target="#faq-collapse1-02" aria-expanded="false" aria-controls="faq-collapse1-02" style="white-space:normal !important; word-wrap: break-word">Jak mám používat vaši aplikaci?<img class="p-1 ml-auto my-auto" src="placeholder/icons/chevron-circle-down.svg" alt=""></button>
+          </h5>
+        </div>
+        <div class="collapse" id="faq-collapse1-02" aria-labelledby="faq-heading1-02">
+          <div class="card-body border-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sollicitudin. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Nullam eget nisl. Curabitur sagittis hendrerit ante. Etiam dictum tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aenean vel massa quis mauris vehicula lacinia.</div>
+        </div>
+      </div>
+      <footer class="text-center">
+          <div class="font-weight-bold ">&hellip;</div>
+          <a href="" class="btn btn-primary btn-lg mt-4">Více často kladených otázek</a>
+      </footer>
+    </div>
+  </div>
+</section>
+

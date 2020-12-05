@@ -6,11 +6,11 @@
     <title>@ViewData["Title"] - DunmmyBackend</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/fontawesome/css/all.min.css">
 </head>
-<body>
+<body class=" bg-light">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">DunmmyBackend</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -31,14 +31,28 @@
         </nav>
     </header>
     <div>
-        <main role="main" class="pb-3">
+        <main class="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="py-5">
         <div class="container">
-            &copy; 2020 - DunmmyBackend - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row border-bottom pb-2">
+            <ul class="nav order-2 order-md-1">
+                <li class="nav-item"><a class="nav-link" href="#">Domů</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Druhy odpadu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Mapa</a></li>
+            </ul>
+            <h5 class="mr-0 mr-md-5 mb-0 order-1 order-md-2"><a href="#">Chci recyklovat</a></h5>
+            <ul class="nav order-3 order-md-3">
+                <li class="nav-item"><a class="nav-link" href="#">Často kladené otázky</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Podpora</a></li>
+            </ul>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+            <p class="mb-0 mt-2 small text-muted">© 2020 Chci recyklovat. All right reserved.</p>
+            </div>
         </div>
     </footer>
 
