@@ -20,15 +20,14 @@ namespace DunmmyBackend
             return _streetNames;
         }
 
-        public IEnumerable<string> GetRandomStreetNames()
+        public string GetRandomStreetNames(Random rand)
         {
-            var rand = new Random(DateTime.Now.Millisecond);
-            yield return StreetNames[rand.Next(0, _streetNamesCount)];
+            return StreetNames[rand.Next(0, _streetNamesCount)];
         }
     }
 
     public interface IStreetNamesProvider
     {
-        IEnumerable<string> GetRandomStreetNames();
+        string GetRandomStreetNames(Random rand);
     }
 }
