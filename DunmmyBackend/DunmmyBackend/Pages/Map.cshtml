@@ -69,8 +69,8 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
 
             <div class="px-2 py-2 border-bottom">
                 <h3 class="h5">Typy odpadu</h3>
-                <div class="list-group filters">
-                    <a href="#" class="list-group-item list-group-item-action">
+                <div id="waste-types" class="list-group filters">
+                    @* <a href="#" class="list-group-item list-group-item-action">
                         <i class="fa fa-fw fa-fire"></i>Nebezpečný odpad<i class="fa fa-filter"></i>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
@@ -84,13 +84,13 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
                         <i class="fa fa-fw fa-recycle"></i>Plast<i class="fa fa-filter"></i>
-                    </a>
+                    </a> *@
                 </div>
             </div>
             <div class="px-2 py-2 border-bottom">
                 <h3 class="h5">Typy sběrných míst</h3>
-                <div class="list-group filters">
-                    <a href="#" class="list-group-item list-group-item-action">
+                <div id="disposal-place-types" class="list-group filters">
+                    @* <a href="#" class="list-group-item list-group-item-action">
                         <i class="fa fa-fw fa-trash"></i>Sběrný dvůr<i class="fa fa-filter"></i>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
@@ -98,7 +98,7 @@ var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
                         <i class="fa fa-fw fa-trash"></i>Popelnice<i class="fa fa-filter"></i>
-                    </a>
+                    </a> *@
                 </div>
             </div>
         </div>
