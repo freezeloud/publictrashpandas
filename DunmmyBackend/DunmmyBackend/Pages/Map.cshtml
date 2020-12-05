@@ -1,10 +1,11 @@
 ﻿@page
 @model MapModel
+@using System.Text.Json
 @{
     ViewData["Title"] = "Privacy Policy";
     var locations = await Model.DataProvider.GetDisposalLocationsAsync(10);
-}
 
+}
 <div class="row">
     <div class="col-3 shadow mb-5 pl-4 bg-white rounded">
         <form>
@@ -48,21 +49,7 @@
         </form>
     </div>
     <div class="col-5">
-        Map
-        @*
-        @{
-            foreach (var location in locations)
-            {
-                <div>
-                    <div>@location.Id @location.Name @location.TypeOfDisposalLocation</div>
-                    @foreach (var wasteType in location.AcceptingTypeOfWaste)
-                    {
-                        <div>@wasteType</div>
-                    }
-                    <div>@location.LatLong.latitude @location.LatLong.longitude</div>
-                </div>
-            }
-        }*@
+        <div id="map"></div>
     </div>
     <div class="col-4">
         <div class="p-3 mb-2 bg-success text-white rounded">
@@ -132,3 +119,7 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var poiList = @Html.Raw(Json.Serialize(locations));
+</script>
