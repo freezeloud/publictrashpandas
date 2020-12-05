@@ -30,7 +30,7 @@ namespace DunmmyBackend
             {
                 yield return new DisposalLocationDetails
                 {
-                    Id = 100 + i,
+                    Id = i,
                     Name = $"{_streets.GetRandomStreetNames(rand)} {rand.Next(1, 1200)}",
                     AcceptingTypeOfWaste = RandomAcceptingTypesOfWaste(rand),
                     LatLng = new LatitudeLongitude(RandomLat(rand), RandomLong(rand)),
